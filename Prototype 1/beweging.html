@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<title>Canvas</title>
+<style>
+#canvas{
+ outline:1px solid #000;
+}
+</style>
+</head>
+<body>
+
+<canvas id="canvas" height="400" width="600"></canvas>
+
+<script>
+
+
+var canvas = document.getElementById('canvas'); //pakt het canvas
+var context = canvas.getContext('2d');
+
+var xPos = 0; // begin positie x
+var yPos = 0; // begin positie y
+
+context.rect(xPos, yPos, 50 , 50); // formaat van het vierkant
+context.stroke(); // uitlijning van het vierkant
+
+function move(e){ //de funtie voor de toesten
+
+ //alert(e.keyCode);
+
+ if(e.keyCode==39){  //rechterpijl
+  xPos+=5;
+ }
+ if(e.keyCode==37) { //linkerpijl
+  xPos-=5;
+ }
+ if (e.keyCode == 38) { 
+  yPos-=5;
+ }
+ if (e.keyCode == 40){
+  yPos+=5;
+ }
+
+ canvas.width=canvas.width; //zorgt ervoor dat het canvas er is en dat het vierkant er staat tijdens de functie
+ context.rect(xPos, yPos, 50 , 50); 
+  context.stroke();
+
+}
+
+
+document.onkeydown = move; //wanneer er een toets wordt ingedrukt wordt de functie geladen. 
+</script>
+</body>
+</html>﻿
