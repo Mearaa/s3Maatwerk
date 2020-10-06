@@ -1,6 +1,6 @@
  class Player extends Phaser.Physics.Matter.Sprite {
   constructor(data){ //A constructor is just the initialization function that gets called when you use the ‘new’ keyword to instantiate an object.
-    let{scene,x,y,texture,frame} = data;
+    var{scene,x,y,texture,frame} = data;
     super(scene.matter.world,x,y,texture,frame); //method that is used to call an object's parent.
     this.scene.add.existing(this);
 
@@ -28,7 +28,7 @@
 
   update(){
     const speed = 2.5;
-    let playerVelocity = new Phaser.Math.Vector2();
+    var playerVelocity = new Phaser.Math.Vector2(); //Let kan ook gebruikt worden omdat het alleen in deze scope valt.
     if(this.inputKeys.left.isDown){ //Movement
       playerVelocity.x = -1
     } else if(this.inputKeys.right.isDown){
@@ -43,10 +43,14 @@
     playerVelocity.scale(speed);
     this.setVelocity(playerVelocity.x, playerVelocity.y);
 
+
+
     if(Math.abs(this.velocity.x) > 0.1 || Math.abs(this.velocity.y) > 0.1){
       this.anims.play('female_walk',true);
     } else {
       this.anims.play('female_idle',true);
     }
+
+
   }
 }

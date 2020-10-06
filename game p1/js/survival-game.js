@@ -13,7 +13,8 @@ const config = {
     default: 'matter',
     matter:{
       debug:true,
-      gravity:{y:0}, //Gravity off
+      gravity:false, //Gravity off
+      enableBody: true,
     },
   },
   plugin:{
