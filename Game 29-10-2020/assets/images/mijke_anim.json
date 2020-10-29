@@ -1,0 +1,56 @@
+{
+    "anims": [
+        {
+            "key": "mijke_walk",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "mijke",
+                    "frame": "mijke_walk_1"
+                },
+                {
+                    "key": "mijke",
+                    "frame": "mijke_walk_2"
+                },
+                {
+                    "key": "mijke",
+                    "frame": "mijke_walk_3"
+                },
+                {
+                    "key": "mijke",
+                    "frame": "mijke_walk_4"
+                }
+            ]
+        },
+        {
+            "key": "mijke_idle",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "mijke",
+                    "frame": "mijke_idle_1"
+                },
+                {
+                    "key": "mijke",
+                    "frame": "mijke_idle_2"
+                },
+                {
+                    "key": "mijke",
+                    "frame": "mijke_idle_3"
+                },
+                {
+                    "key": "mijke",
+                    "frame": "mijke_idle_4"
+                },
+                {
+                    "key": "mijke",
+                    "frame": "mijke_idle_5"
+                }
+            ]
+        }
+    ]
+}
