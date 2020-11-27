@@ -10,11 +10,24 @@ Download de repository van GIT en installeer de plugin voor de animated tiles.
 cd node
 cd phaser-animated-tiles-master
 npm install
-npm run build
 
 ```
 ## Gebruik
 Om de game te kunnen gebruiken dient de folder geopend te worden in Microsoft Visual code. Open index.html, rechtermuisklik en "Open with live server". 
+
+## Opbouw Survival-game.js
+Deze JS is opgebouw in JSON formaat zodat dit gemakkelijk af te lezen is. Hier worden de basic configuraties in weer gegeven zoals welke physics engine er gebruikt wordt, in dit geval matter engine. Belangrijk om te weten is dat dit spel niet omgezet kan worden naar arcade ivm meerdere functies die gebruikt zijn onder de matter engine. Om te zien waar alle colliders te zitten in het spel kan je hier debug:true aanzetten ipv false. 
+
+## Opbouw MainScene.js
+
+In de preload worden alle assets ingeladen waaronder de reguliere map en de geanimeerde map en de verschillende resources. Ook wordt hier de plugin geladen voor de geanimeerde map.
+
+In de create worden de voorheen genoemde map en resources ook daadwerkelijk gemaakt. Hier worden de lagen van Tiled ook meegeroepen, aangemaakt en wordt de collider aangezet. In de create functie wordt er ook een nieuwe instantie van de speler aangeroepen. 
+
+In de update functie wordt de speler continu geupdate met name de positie en animatie. 
+
+## Opbouw MainScene.js
+
 
 ## Controls
 De speler is te bedienen door middel van de WASD keys en valt de speler aan met de Q key. Mocht dit niet de gewenste keys zijn dan kunnen deze veranderd worden in MainScene.js vanaf regel 74.
