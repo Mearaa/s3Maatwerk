@@ -1,0 +1,15 @@
+{
+  "name": "phaserserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "AnimatedTiles.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "^2.0.0",
+    "socket.io": "^3.0.3"
+  }
+}

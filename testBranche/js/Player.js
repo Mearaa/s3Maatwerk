@@ -58,7 +58,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   update() {
     const speed = 2.5;
     var playerVelocity = new Phaser.Math.Vector2();
-    if (this.inputKeys.left.isDown) { //Movement
+    if (this.inputKeys.left.isDown || direction == "A") { //Movement
       playerVelocity.x = -1
       this.setFlipX(-1);
       this.setFixedRotation();
