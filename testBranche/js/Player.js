@@ -1,3 +1,4 @@
+
 export default class Player extends Phaser.Physics.Matter.Sprite {
   constructor(data) { //A constructor is just the initialization function that gets called when you use the ‘new’ keyword to instantiate an object.
     var {
@@ -9,7 +10,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     } = data;
     super(scene.matter.world, x, y, texture, frame); //method that is used to call an object's parent.
     this.scene.add.existing(this);
-
+   
     /////////////////// WEAPON ///////////////////
     this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'weapons', 36);
     this.spriteWeapon.setScale(0.7);
@@ -58,6 +59,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   update() {
     const speed = 2.5;
     var playerVelocity = new Phaser.Math.Vector2();
+    var direction = 0;
     if (this.inputKeys.left.isDown || direction == "A") { //Movement
       playerVelocity.x = -1
       this.setFlipX(-1);
@@ -65,15 +67,15 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
 
       //this.player.setScale(1, 1);
       //  this.body.setScale = -1;
-    } else if (this.inputKeys.right.isDown) {
+    } else if (this.inputKeys.right.isDown || direction == "D") {
       playerVelocity.x = 1;
       this.setFlipX(0);
       this.setFixedRotation();
       //this.player.setScale(1, 1);
     }
-    if (this.inputKeys.up.isDown) {
+    if (this.inputKeys.up.isDown || direction == "W") {
       playerVelocity.y = -1
-    } else if (this.inputKeys.down.isDown) {
+    } else if (this.inputKeys.down.isDown || direction == "S") {
       playerVelocity.y = 1;
     }
     playerVelocity.normalize(); // Makes sure diagonal speed is set the same as right and left
